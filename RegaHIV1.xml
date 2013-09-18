@@ -749,7 +749,7 @@ History:
         </RULE>
     </DRUG>    <!-- END T20 -->
 
-<!-- ********** Begin II drugs ********** -->
+<!-- ********** Begin INI drugs ********** -->
 
     <DRUG>
         <NAME>RTG</NAME>
