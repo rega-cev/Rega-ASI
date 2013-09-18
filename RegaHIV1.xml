@@ -84,12 +84,12 @@ History:
 
         <DRUGCLASS>
             <NAME>NNRTI</NAME>
-            <DRUGLIST>NVP,DLV,EFV,ETR</DRUGLIST>
+            <DRUGLIST>NVP,DLV,EFV,ETR,RPV</DRUGLIST>
         </DRUGCLASS>
 
 	<DRUGCLASS>
             <NAME>INI</NAME>
-            <DRUGLIST>RTG</DRUGLIST>
+            <DRUGLIST>RTG,EVG,DTG</DRUGLIST>
         </DRUGCLASS>
 
         <DRUGCLASS>
