@@ -775,6 +775,28 @@ History:
     		</ACTIONS> 
     	</RULE> 
     </DRUG>    <!-- END EVG -->
+	<DRUG> 
+		<NAME>DTG</NAME> 
+		<RULE> 
+			<CONDITION> 
+			SCORE FROM (263K => 1.5, 
+						118R => 1.5, 
+						148HKR => 1, 
+						140ACS => 0.5,
+						51Y => 0.5,
+						74M => 0.5,
+						92Q => 0.5,
+						97A => 0.5,
+						124A => 0.5,
+						138K => 0.5,
+						153F => 0.5,
+						155H => 0.5)
+			</CONDITION> 
+		<ACTIONS> 
+			<SCORERANGE>(-INF TO 1.49 => 1, 1.5 TO 1.99 => 4, 2 TO INF => 6)</SCORERANGE>
+		</ACTIONS> 
+		</RULE> 
+	</DRUG>    <!-- END DTG -->
 
     <DRUG>
         <NAME>RTG</NAME>
