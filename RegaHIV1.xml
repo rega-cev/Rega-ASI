@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE ALGORITHM SYSTEM 
-  "http://hivdb6.stanford.edu/asi/xml/ASI.dtd">
+  "http://hivdb.stanford.edu/DR/xml/ASI2.dtd">
 
 <!-- Rega algorithm in XML format -->
 <!-- 
@@ -14,11 +14,28 @@ History:
 <ALGORITHM>
     <ALGNAME>Rega v9.0.0</ALGNAME>
     <ALGVERSION>9.0.0</ALGVERSION>
-	<PROCESSING_DIRECTIVES>
-	<RESTRICTED_POSITION_SCORING/>
-	</PROCESSING_DIRECTIVES>
 
     <DEFINITIONS>
+    	<GENE_DEFINITION>
+    	   <NAME>PR</NAME>
+    	   <DRUGCLASSLIST>PI</DRUGCLASSLIST>
+    	</GENE_DEFINITION>
+
+    	<GENE_DEFINITION>
+    	   <NAME>RT</NAME>
+    	   <DRUGCLASSLIST>NNRTI, NRTI</DRUGCLASSLIST>
+    	</GENE_DEFINITION>
+
+    	<GENE_DEFINITION>
+    	   <NAME>IN</NAME>
+    	   <DRUGCLASSLIST>INI</DRUGCLASSLIST>
+    	</GENE_DEFINITION>
+
+    	<GENE_DEFINITION>
+    	   <NAME>FU</NAME>
+    	   <DRUGCLASSLIST>EI</DRUGCLASSLIST>
+    	</GENE_DEFINITION>
+
         <LEVEL_DEFINITION>
             <ORDER>1</ORDER>
             <ORIGINAL>Susceptible GSS 1</ORIGINAL>
