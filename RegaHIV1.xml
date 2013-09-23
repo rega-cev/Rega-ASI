@@ -1011,21 +1011,21 @@ History:
     	<NAME>EVG</NAME> 
     	<RULE> 
     		<CONDITION> 
-    		SCORE FROM (66AIK => 2, 
-    					92QG => 2, 
-    					145S => 2, 
-    					146ILPR => 2, 
-    					147G => 2, 
-    					148HKR => 2, 
-    					155HST => 2, 
-    					121Y => 1, 
-    					140SAC => 1, 
-    					51Y => 0.5, 
-    					97A => 0.5, 
-    					114Y => 0.5, 
-    					146K => 0.5,
-    					153FY => 0.5, 
-    					263K => 0.5) 
+    		SCORE FROM (
+		  51Y => 0.5,
+		  66AIK => 2,
+		  92QG => 2,
+		  97A => 0.5,
+		  114Y => 0.5,
+		  121Y => 1,
+		  140SAC => 1,
+		  145S => 2,
+		  MAX(146ILPR => 2.0, 146K => 0.5),
+		  147G => 2,
+		  148HKR => 2,
+		  153FY => 0.5,
+		  155HST => 2,
+		  263K => 0.5)
     		</CONDITION> 
     		<ACTIONS> 
     	 		<SCORERANGE>(-INF TO 0.99 => 1, 1 TO 1.99 => 5, 2 TO INF => 6)</SCORERANGE> 
