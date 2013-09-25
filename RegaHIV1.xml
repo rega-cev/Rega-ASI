@@ -810,36 +810,6 @@ History:
 	</RULE>
 	</DRUG>    <!-- END LPV/r -->
 
-    <DRUG>
-        <NAME>ATV</NAME>
-        <RULE>
-           <CONDITION>
-		 SCORE FROM ( MAX ( 10Y => 1, 10F => 0.5, 10IV => 0.25 ),
-                              MAX ( 20T => 1, 20IMRV => 0.25 ),
-                              24I => 0.5,
-                              32I => 0.5,
-                              33FI => 0.25,
-                              46IL => 0.5,
-                              47V => 1,
-                              48MV => 2,
-                              50L => 2,
-                              MAX ( 54AST => 1.5, 54V => 1, 54LM => 0.5 ),
-                              58E => 0.5,
-                              MAX ( 71IL => 0.5, 71TV => 0.25 ),
-                              73ACFST => 0.5,
-                              MAX ( 74P => 1, 74AS => 0.25 ),
-                              76V => -0.25,
-                              MAX ( 82LT => 1, 82AMSF => 0.5 ),
-                              84V => 1,
-                              85V => 0.5,
-                              MAX ( 88S => 1.5, 88D => 1 ),
-                              90M => 1 )
-	   </CONDITION>
-            <ACTIONS>
-                 <SCORERANGE>(-INF TO 1.99 => 1, 2 TO 3.49 => 4, 3.5 TO INF => 6)</SCORERANGE>
-            </ACTIONS> 
-        </RULE>
-       </DRUG>    <!-- END ATV -->
 
 <DRUG>
         <NAME>ATV/r</NAME>
