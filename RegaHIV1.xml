@@ -84,7 +84,7 @@ History:
 
         <DRUGCLASS>
             <NAME>NNRTI</NAME>
-            <DRUGLIST>NVP,DLV,EFV,ETR,RPV</DRUGLIST>
+            <DRUGLIST>NVP,EFV,ETR,RPV</DRUGLIST>
         </DRUGCLASS>
 
 	<DRUGCLASS>
@@ -499,32 +499,7 @@ History:
             </ACTIONS>
 	</RULE>   
     </DRUG>    <!-- END NVP -->
-  
-    <DRUG>
-        <NAME>DLV</NAME>
-        <RULE>
-            <CONDITION>
-		 SCORE FROM ( 98G => 0.5,
-                              100I => 2,
-                              MAX ( 101P => 2, 101EHNQ => 0.5 ),
-                              MAX ( 103HNST => 2, 103R => 0.5 ),
-                              MAX ( 106AM => 2, 106I => 0.5 ),
-                              108I => 0.5,
-                              179DE => 0.5,
-                              181CIV => 2,
-                              188CHL => 2,
-                              190EQ => 2,
-                              227CL => 0.5,
-                              230IL => 2,
-                              236L => 2,
-                              318F => 2 )
-	    </CONDITION>
-            <ACTIONS>
-                 <SCORERANGE>(-INF TO 0.99 => 1, 1 TO 1.99 => 5, 2 TO INF => 6)</SCORERANGE>
-            </ACTIONS>
-	</RULE>    
-	</DRUG>    <!-- END DLV -->
-  
+    
     <DRUG>
         <NAME>EFV</NAME>
         <RULE>
