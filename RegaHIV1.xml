@@ -732,34 +732,6 @@ History:
 	</RULE>
     </DRUG>    <!-- END NFV -->
 
-    <DRUG>
-        <NAME>FPV</NAME>
-        <RULE>
-            <CONDITION>
-		 SCORE FROM ( MAX ( 10F => 0.5, 10IV => 0.25 ),
-                              MAX ( 20T => 0.5, 20IRMV => 0.25 ),
-                              24I => 0.5,
-                              32I => 0.5,
-                              MAX ( 33F => 0.5, 33I => 0.25 ),
-                              MAX ( 43T => 0.5, 43R => 0.25 ),
-                              46IL => 0.5,
-                              47AV => 1,
-                              MAX ( 48M => 1, 48A => 0.5, 48V => 0.25 ),
-                              MAX ( 50V => 2, 50L => -0.25 ),
-                              MAX ( 54MTV => 1, 54AL => 0.5 ),
-                              58E => 0.5,
-                              76V => 1.5,
-                              MAX ( 82F => 1, 82AMST => 0.5 ),
-                              84ACV => 1.5,
-                              88S => -0.25,
-                              MAX ( 89TV => 0.5, 89I => 0.25 ),
-                              90M => 0.25 )
-	    </CONDITION>
-            <ACTIONS>
-                 <SCORERANGE>(-INF TO 1.99 => 1, 2 TO 3.49 => 4, 3.5 TO INF => 6)</SCORERANGE>
-            </ACTIONS>
-	</RULE>
-    </DRUG>    <!-- END FPV -->
 
 <DRUG>
         <NAME>FPV/r</NAME>
