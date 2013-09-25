@@ -89,7 +89,7 @@ History:
 
 	<DRUGCLASS>
             <NAME>INI</NAME>
-            <DRUGLIST>RTG,EVG,DTG</DRUGLIST>
+            <DRUGLIST>RAL,EVG,DTG</DRUGLIST>
         </DRUGCLASS>
 
         <DRUGCLASS>
@@ -999,7 +999,7 @@ History:
 	</DRUG>    <!-- END DTG -->
 
     <DRUG>
-        <NAME>RTG</NAME>
+        <NAME>RAL</NAME>
         <RULE>
             <CONDITION>
 		SCORE FROM (
@@ -1022,6 +1022,6 @@ History:
                  <SCORERANGE>(-INF TO 0.99 => 1, 1 TO 19.99 => 5, 20 TO INF => 6)</SCORERANGE>
             </ACTIONS> 
         </RULE>
-    </DRUG>    <!-- END RTG -->
+    </DRUG>    <!-- END RAL -->
 
 </ALGORITHM>	
