@@ -74,7 +74,7 @@ History:
 
         <DRUGCLASS>
             <NAME>PI</NAME>
-            <DRUGLIST>IDV/r,SQV/r,NFV,FPV,FPV/r,LPV/r,ATV,ATV/r,TPV/r,DRV/r</DRUGLIST>
+            <DRUGLIST>IDV/r,SQV/r,NFV,FPV/r,LPV/r,ATV/r,TPV/r,DRV/r</DRUGLIST>
         </DRUGCLASS>
 
         <DRUGCLASS>
