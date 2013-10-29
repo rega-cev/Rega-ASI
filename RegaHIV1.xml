@@ -12,8 +12,8 @@ History:
 -->
 
 <ALGORITHM>
-    <ALGNAME>Rega v9.0.1</ALGNAME>
-    <ALGVERSION>9.0.1</ALGVERSION>
+    <ALGNAME>Rega v9.1.0</ALGNAME>
+    <ALGVERSION>9.1.0</ALGVERSION>
 
     <DEFINITIONS>
     	<GENE_DEFINITION>
@@ -962,6 +962,7 @@ History:
 			  124A => 0.5,
 			  138K => 0.5,
 			  140ACS => 0.5,
+			  143CHR => 0.5,
 			  148HKR => 1,
 			  153F => 0.5,
 			  155H => 0.5,
