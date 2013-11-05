@@ -559,33 +559,31 @@ History:
 	</RULE>
     </DRUG>    <!-- END ETR-->
 <DRUG> 
-		<NAME>RPV</NAME> 
-		<RULE> 
-			<CONDITION> 
-			  SCORE FROM ( 
-			    90I => 0.5,
-			    MAX(101E => 1.5, 101P => 2.5, 101QT => 0.5),
-			    103S => 0.5,
-			    106AI => 0.5,
-			    108I => 0.5,
-			    138AGKQRS => 1.5,
-			    MAX(179DTI => 0.5, 179L => 1.5),
-			    MAX(181C => 1.5, 181IV => 2.5),
-			    188L => 2.5,
-			    189I => 0.5,
-			    190E => 0.5,
-			    221Y => 1.5,
-			    227C => 1.5,
-			    230IL => 1.5,
-			    (100I AND 103N) => 2.5, 
-			    (101E AND 184IV) => 2.5,
-			    (138K AND 184IV) => 2.5)
+	<NAME>RPV</NAME> 
+	<RULE> 
+		<CONDITION> 
+			SCORE FROM (
+			90I => 0.5,
+			MAX(101E => 1.5, 101P => 2.5, 101QT => 0.5, (101E AND 184IV) => 2.5),
+			103S => 0.5,
+			106AI => 0.5,
+			108I => 0.5,
+			MAX(138AGKQRS => 1.5, (138K AND 184IV) => 2.5),
+			MAX(179DTI => 0.5, 179L => 1.5),
+			MAX(181C => 1.5, 181IV => 2.5),
+			188L => 2.5,
+			189I => 0.5,
+			190E => 0.5,
+			221Y => 1.5,
+			227C => 1.5,
+			230IL => 1.5,
+			(100I AND 103N) => 2.5)
 		</CONDITION> 
-			<ACTIONS> 
-				<SCORERANGE>(-INF TO 1.49 => 1, 1.5 TO 2.49 => 5, 2.5 TO INF => 6)</SCORERANGE> 
-			</ACTIONS> 
-		</RULE> 
-		</DRUG>    <!-- END RPV -->
+		<ACTIONS> 
+			<SCORERANGE>(-INF TO 1.49 => 1, 1.5 TO 2.49 => 5, 2.5 TO INF => 6)</SCORERANGE> 
+		</ACTIONS> 
+	</RULE> 
+</DRUG>    <!-- END RPV -->
 
 <!-- ********** Begin PI drugs ********** -->
 
