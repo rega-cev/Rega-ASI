@@ -1,6 +1,28 @@
 Rega algorithm rules document 
 ==============================
 
+## Tipranavir/r
+
+High level resistance: score at least 3,5
+
+Intermediate resistance: score at least 2
+
+Score 2: I47V, T74P, L82T;
+
+Score 1,5: Q58E, V82L/S, N83D;
+
+Score 1: 41T, K43T, I54A/M/V, I84A/C/V; 
+
+Score 0,5: L33F , I47A, M46L, I54S/T, gagV128I, gagA431V, gagL449F,
+gagR452S, gagP453L;
+
+Score 0,25: V32I, 38W, 45I, A71L, G73T, I82A/F/M, L89T/V, L90M;
+
+Score -0,25: 50L/V
+
+***Comment: gag mutations added; I50V added as a negative score mutation***
+
+
 ## Atazanavir/r
 
 High level resistance: score at least 3,5
