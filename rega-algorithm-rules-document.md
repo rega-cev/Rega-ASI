@@ -1,6 +1,26 @@
 Rega algorithm rules document 
 ==============================
 
+## Tenofovir
+
+High level resistance:
+
+69X-XX *or* (65NR and not 184IV) or (41L+210W+215Y and no 184I/V) *or*
+\[at least 3 mutations of \[(67N, 70R, 215ACDEGHILNSVYF, 219EHNQR) + at
+least one mutation (41L, 210W)\]
+
+Intermediate resistance:
+
+70EG *or* \[65NR and 184IV\] *or* \[41L+210W+215Y+184IV\]  *or* \[at
+least 2 mutations of (67N,70R, 215ACDEGHILNSVYF,219EHNQR) + at least one
+mutation (41L, 210W)\] *or* \[151M and at least 3 mutations of
+(75I,77L,116Y)\]
+
+***Comments: increased the weight of TAM 1 mutations, and the predictive
+value of 41L and 210W, according to the paper from Michael Miller (2004,
+JID) on intensification studies with TDF ***
+
+
 ## Tipranavir/r
 
 High level resistance: score at least 3,5
