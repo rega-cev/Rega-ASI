@@ -1,6 +1,15 @@
 Rega algorithm rules document 
 ==============================
 
+## Stavudine
+
+\[at least 1 mutation of (65R∆67,69X-XX,75AMST,151M)\] *or* \[at least 4
+mutations of (41L,67N,69ADGN,70R,210W,215ACDEGHILNSVFY,219EHNQR)\] *or*
+\[3 mutations of (41L,210W,215Y)\]
+
+***Comments: K65R added to the stavudine rules***
+
+
 ## Tenofovir
 
 High level resistance:
