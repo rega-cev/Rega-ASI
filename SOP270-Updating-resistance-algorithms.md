@@ -82,6 +82,7 @@ Basic structure of XML using RPV as example:
 
 Note: Clinical virologists and/or clinicians determine what changes to the rules are needed and should be implemented and write this information in the rules document (outside scope of this SOP).
 
+1.  Add the rules document as a new version to Github.
 1.  From the rules document, rewrite the changes as a series of issues in github. The team decides how fine-grained individual change requests must be.
 1.  Clone / pull the repository locally
 1.  Address one issue at a time in both the narrative and XML files, writing the changes required into both files.
