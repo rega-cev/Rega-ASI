@@ -148,43 +148,20 @@ Intermediate Resistance = 0,25
 
 Resistance = 0
 
-Dolutegravir Rules 
--------------------
+## Dolutegravir Rules 
 
-G263K = 1,5
+High level resistance: score at least 2
 
-G118R = 1,5
+Intermediate resistance: score at least 1,5
 
-Q148H/K/R = 1
+Score 2: (A49G+S230R+R263K)
 
-G140S/A/G = 0,5
+Score 1,5: (Q148H/K/R+L74I)
 
-H51Y = 0,5
+Score 1: Q148H/K/R, G118R, R263K;
 
-L74M = 0,5
+Score 0,5: T66K, L74M, E92Q, G140A/C/S, I151L, S153F/Y, N155H/S/T,
 
-E92Q = 0,5
+Score 0,25: A49G/P, T97A, F121Y, S147G, S230G/R
 
-T97A = 0,5
-
-T124A = 0,5
-
-E138K = 0,5
-
-S153F = 0,5
-
-N155H = 0,5
-
-Susceptible = 0
-
-Intermediate resistance = 1,5
-
-Resistance =&gt; 2
-
-GSS score:
-
-Resistance = 0
-
-Intermediate Resistance = 0,5
-
-Susceptible = 1
+***Completely new set of rules***
