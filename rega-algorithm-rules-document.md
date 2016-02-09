@@ -1,5 +1,29 @@
 Rega algorithm rules document 
 ==============================
+## Lopinavir/r
+
+High level resistance: score at least 3,5
+
+Intermediate resistance: score at least 2
+
+Score 2: I47A
+
+Score 1,5: 32X-X, I50V, I54A/T, L76V
+
+Score 1: I47V, G48M, I54S/V, I82F/S, I84A, gagA431V, gagK436E, gagI437T
+
+Score 0,5: L10F, K20T, L24F/I, V32I, L33F, K43T, M46I/L , G48AV, F53L,
+I54LM, A71I, G73S/T/C, V82/A/L/M/T, I84V, N88D, L90M, gagI437V,
+gagL449F 
+
+Score 0,25: L10I/V, K20/I/M/R/V, L33I, K43R, 64M/V, A71T/V, V77A/T/V
+
+Score -0,25: I50L 
+
+***Comments: gag mutations added. One serious doubt: should the
+intermediate resistance score stay at 2 or rise to 2,5? It looks to me
+that we’re reaching the intermediate level too fast.***
+
 
 ## Darunavir/r
 
