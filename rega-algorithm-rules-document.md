@@ -165,3 +165,28 @@ Score 0,5: T66K, L74M, E92Q, G140A/C/S, I151L, S153F/Y, N155H/S/T,
 Score 0,25: A49G/P, T97A, F121Y, S147G, S230G/R
 
 ***Completely new set of rules***
+
+## Raltegravir
+
+High level resistance: score at least 2
+
+Intermediate resistance: score at least 1
+
+Score 2: Y143C/H/K/R/S, Q148H/K/R, N155H/S/T
+
+Score 1: T66K, E92Q/V, G118R, F121Y, G140A/C/S, V151L;
+
+Score 0,5: L74M, T97A, E138A, G163K
+
+Score 0,25: E138K, G163R, S119R, V151I, E157Q, S230N/R, R263K
+
+***Comments: correction of typing error in score 2 (it was 20 in the
+previous version of the algorithm); added mutations 143/K/S, N155T,
+T66K, E92V, G118R, F121Y, V151L, G140C, E157Q, S230N/R, R263K.***
+
+***All mutations at codon 143 are now scored 2; L74M, T97A, E138A and
+G163K are now scored 0,5***
+
+***Positions 206 and 232 are highly polymorphic; mutations at these
+positions were now excluded.***
+
