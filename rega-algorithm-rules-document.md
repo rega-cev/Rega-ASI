@@ -1,5 +1,28 @@
 Rega algorithm rules document 
 ==============================
+
+## Atazanavir/r
+
+High level resistance: score at least 3,5
+
+Intermediate resistance: score at least 2
+
+Score 2: G48M/V, I50L;
+
+Score 1,5: I54A/S/T, N88S; 
+
+Score 1: L10Y, K20T, I47V, I54V, L74P, V82LT, I84V, N88D, L90M;
+
+Score 0,5: L10F, L24I, V32I, M46I/L, I54L/M, Q58E, A71I/L, G73A/C/F/S/T,
+V82A/M/S/F, I85V, gagA431V, gagI437V, gagL449F, gagP453L;
+
+Score 0,25: L10IV, K20I/M/R/V, L33FI, A71TV, T74A/S; 
+
+Score -0,25: L76V
+
+***Comment: gag mutations added***
+
+
 ## Lopinavir/r
 
 High level resistance: score at least 3,5
