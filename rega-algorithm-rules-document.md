@@ -119,34 +119,19 @@ V90I, K101Q/T, K103S, V106A/I, V108I, V179D, V179T, V179I, V189I, G190E.
 Proposal of rules for interpretation of Elvitegravir resistance
 ---------------------------------------------------------------
 
-1.  Mutations selected *in vitro* under drug pressure;
-
-2.  Mutations selected *in vivo* in Elvitegravir Clinical Trials;
-
-3.  Mutations studied *in vitro* with a phenotypic impact in
-    Elvitegravir activity;
-
-4.  Reports from the mutation's patterns at virological failure in
-    patients taking Elvitegravir
-
 High level resistance: score at least 2
 
 Intermediate resistance: score at least 1
 
-i\. Add 2 to the score for every mutation in the following list:
-T66A/I/K, E92Q/G, P145S, Q146I/L/P/R, S147G, Q148H/K/R, N155H/S/T.
+Score 2: T66A/I/K, E92Q/G, P145S, Q146ILPR, S147G, Q148HKR, N155H/S/T
 
-i.i. Add 1 to the score for every mutation in the following list: F121Y,
-G140S/A/C.
+Score 1: F121Y, G140A/C/S, V151A/L
 
-i.i.i. Add 0,5 to the score for every mutation in the following list:
-H51Y, T97A, H114Y, Q146K, S153F/Y, R263K.
+SCORE 0,5: H51Y, T97A, H114Y, Q146K, S153F/Y, R263K
 
-GSS: Susceptible = 1
+***Comments: not much, the last review was not so long ago. Only
+mutations V151A/L were added***
 
-Intermediate Resistance = 0,25
-
-Resistance = 0
 
 ## Dolutegravir Rules 
 
