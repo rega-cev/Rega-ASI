@@ -1,6 +1,24 @@
 Rega algorithm rules document 
 ==============================
 
+## Darunavir/r
+
+High level resistance: score at least 3,5
+
+Intermediate resistance: score at least 2,5
+
+Score 1,5: I50V, L76V, I84A/C/V;
+
+Score 1: V32I, I47A/V, I54L/M, gagV128I;
+
+Score 0,5: V11I, L33F, T74P, L89V, gagS451T, gagR452T, gagA431V;
+
+Score 0,25: M46I, L89I;
+
+Score -0,25: I50L, N88S, V82A/S/T
+
+***Comments: completely new set of rules***
+
 Proposal for Rilpivirine rules, based on:
 -----------------------------------------
 
