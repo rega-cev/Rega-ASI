@@ -82,13 +82,16 @@ Basic structure of XML using RPV as example:
 
 Note: Clinical virologists and/or clinicians determine what changes to the rules are needed and should be implemented and write this information in the rules document (outside scope of this SOP).
 
-1.  Add the rules document as a new version to Github.
-1.  From the rules document, rewrite the changes as a series of issues in github. The team decides how fine-grained individual change requests must be.
-1.  Clone / pull the repository locally
+1.  Add the **rules document** as a new version to **Github**. Make the updates to each drug a seperate commit. 
+1.  From the rules document, rewrite the changes as a series of **issues** in github. 
+	1.  **Title**: "{drug} rule changes", or a more specific message
+	2.  **Comment**: Copy paste the changes that will are to be included for this issue from the rules document. What is included will depend on how fine-grained the issues should be (the team decides this) or what was decided should be included (some things may be left out until later).
+	3.  **Assign** it.
+1.  Clone / **pull** the repository locally
 1.  Address one issue at a time in both the narrative and XML files, writing the changes required into both files.
   1. Make the same change in both files so that they correspond at all times.
   1. Some changes are required in one of the files only, eg. author affiliations occur in the narrative file only.
-1.  Check the quality of the edits
+  2. Check the quality of the edits
 1.  Commit the changes (both files, one commit). Reference the associated issue in the commit.
 1.  Test the algorithm using the Stanford tool (see below)
 1.  If any problems are found, fix, retest and amend previous commit.
@@ -99,29 +102,9 @@ Note: Clinical virologists and/or clinicians determine what changes to the rules
 ### Testing
 #### Kristof /Dutch discordance tool (?)
 #### Jens testing tool (?)
-#### Stanford tool
+#### Sequence tool
 
-+  This procedure checks the algorithm against the Stanford HIVDB tool to verify that changes made in the algorithm are in-line with what was expected.
-+  The Stanford HIVDB tool can be used to test a new algorithm but for PR, RT and IN only.
-
-1.  Export "Patient_sample_sequence_ORF_protein" from RegaDB (SOP 200)
-1.  Open the Access tool
-<br><br>
-\\toaster\home13\fferre0\Algorithm\testing\data\algorithm testing exports for stanford.accdb
-<br><br>
-1.  Run the saved import
-1.  Run all the saved exports
-1.  Change data to FASTA format
-1.  Open Stanford sequence tool
-<br><br>
-http://sierra2.stanford.edu/sierra/servlet/JSierra?action=algSequenceInput
-<br><br>
-1.  Tick latest Rega algorithm (untick the others)
-1.  Upload the algorithm to test (the XML file)
-1.  Upload the dataset
-1.  Select text as output
-1.  Diff the results
-
+Run the fasta file against the current XML, then make the changes and run it again using the new XML. Diff the results.
 
 #### RegaDB dev version (manual add and exports)
 
