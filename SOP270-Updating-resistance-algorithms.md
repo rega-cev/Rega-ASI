@@ -82,8 +82,8 @@ Basic structure of XML using RPV as example:
 
 Note: Clinical virologists and/or clinicians determine what changes to the rules are needed and should be implemented and write this information in the rules document (outside scope of this SOP).
 
-1.  Add the **rules document** as a new version to **Github**. Make the updates to each drug a seperate commit. 
-1.  From the rules document, rewrite the changes as a series of **issues** in github. 
+1.  Add the **rules document** as a new version to **Github**. Make the updates to each drug a seperate commit.
+1.  From the rules document, rewrite the changes as a series of **issues** in github.
 	1.  **Title**: "{drug} rule changes", or a more specific message
 	2.  **Comment**: Copy paste the changes that will are to be included for this issue from the rules document. What is included will depend on how fine-grained the issues should be (the team decides this) or what was decided should be included (some things may be left out until later).
 	3.  **Assign** it.
@@ -93,22 +93,31 @@ Note: Clinical virologists and/or clinicians determine what changes to the rules
   1. Some changes are required in one of the files only, eg. author affiliations occur in the narrative file only.
   2. Check the quality of the edits
 1.  Commit the changes (both files, one commit). Reference the associated issue in the commit.
-1.  Test the algorithm using the Stanford tool (see below)
-1.  If any problems are found, fix, retest and amend previous commit.
-1.  When the algorithm appears to be working correctly, update the issue status to “fixed” on Github
-1.  Do other Tests
+1.  Test the algorithm using the Stanford tool (see below), regadb dev version and other, as required
+1.  If any problems are found, fix, retest and commit (or amend previous commit).
+1.  Once the algorithm appears to be working correctly, update the issue status to “fixed” on Github
 1.  Finalise (see below)
 
 ### Testing
+#### Stanford tool
+1. Navigate to http://sierra2.stanford.edu/sierra/servlet/JSierra?action=algSequenceInput
+1. Also navigate to http://hivdb.stanford.edu/pages/geno-rx-datasets.html
+1. Download the appropriate dataset depending on the the drug class the drug that was changed, falls into
+1. On the sierra tool, upload the test algorithm
+1. Paste a few of the samples taken from the dataset
+1. Analyze
+  1. If the analysis proceeds correctly, the XML works.
+1. Checking the results can also be used to verify that the XML is interpreted correctly but this would require picking the sequences deliberately and knowing the expected results.
+
 #### Kristof /Dutch discordance tool (?)
 #### Jens testing tool (?)
-#### Sequence tool
+#### Sequence tool (?)
 
 Run the fasta file against the current XML, then make the changes and run it again using the new XML. Diff the results.
 
 #### RegaDB dev version (manual add and exports)
 
-1.  Implement the algorithm in a development or test version of RegaDB with a large dataset and check that it works as expected
+1.  Implement the algorithm in a development or test version of RegaDB and check that it works
   1.  Upload the algorithm manually through the interface of a development or test version of RegaDB with a large dataset
     1. Administrator >> test settings >> test >> Add
       1. test: REGA vx.y.z
@@ -125,7 +134,7 @@ Run the fasta file against the current XML, then make the changes and run it aga
       1. base Outputfile: interpretation
     1. Under analysis data group
       1. name: asi_rules (where the git repository is)
-      1. click browse to select the algorithm from your computer
+      1. file content: click browse to select the algorithm from your computer
       1. click upload
       1. click add
   1. Click ok
@@ -138,7 +147,7 @@ Run the fasta file against the current XML, then make the changes and run it aga
     1.  Diff the before and after datasets and check the changes to verify the software uses the algorithm correctly (differences are what was expected)
 
 
-####RegaDB: Test deployment on test system from the central repository
+#### RegaDB: Test deployment on test system from the central repository
 1. The algorithm needs to be added to the central repository by Ewout
 1. On the dev system, delete any results associated with the new algorithm added during previous testing
   1. Login to Postgres: psql -U regadb_user regadb_password
@@ -161,11 +170,13 @@ Run the fasta file against the current XML, then make the changes and run it aga
 Once all issues have been addressed and testing is complete, the algorithm can be finalised.
 1.  Decide on new version number (see “standards” section)
 1.  Change ALGNAME and ALGVERSION tags in the XML
-1.  Update history comment block in the XML
-1.  Commit
+1.  Update history comment block in the XML and commit
 1.  Rename the file and commit (git move)
+1.  Merge into master branch
+1.  Make a release branch using the name of the version as the branch name
 1.  Tag the commit as a release
-1.  Push to github repository, (with tags!)
+1.  Checkout master
+1.  Push to github repository, (with tags!), all branches
 
 ### Distribution
 #### Rega website
