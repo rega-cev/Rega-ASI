@@ -74,7 +74,7 @@ History:
 
         <DRUGCLASS>
             <NAME>PI</NAME>
-            <DRUGLIST>IDV/r,SQV/r,NFV,FPV/r,LPV/r,ATV/r,TPV/r,DRV/r</DRUGLIST>
+            <DRUGLIST>IDV/r,SQV/r,NFV,FPV/r,LPV/r,ATV/r,TPV/r,DRV/r,DRV/c</DRUGLIST>
         </DRUGCLASS>
 
         <DRUGCLASS>
@@ -967,7 +967,46 @@ History:
 	</RULE>
 	</DRUG>	<!-- END DRV/r -->
 
-        <!-- ********** Begin EI drugs ********** -->
+<DRUG>
+	<NAME>DRV/c</NAME>
+	<RULE>
+	<CONDITION>
+		SELECT ATLEAST 0 FROM (1P)
+		</CONDITION>
+            <ACTIONS>
+                <LEVEL>2</LEVEL>
+            </ACTIONS>
+        </RULE>	
+<RULE>
+		<CONDITION>
+		 SCORE FROM ( 11I => 1,
+                              MAX ( 32I => 1, 32L => 0.5 ),
+                              MAX ( 33F => 1, 33MV => 0.5, 33I => 0.25 ),
+                              34V => 0.5,
+                              MAX ( 35G => 0.5, 35N => 0.25 ),
+                              MAX ( 41T => 1, 41I => 0.5 ),
+                              46IL => 0.5,
+                              47AV => 1,
+                              48M => 0.5,
+                              MAX ( 50V => 1.5, 50L => -0.25 ),
+                              MAX ( 54M => 1.5, 54L => 1, 54STV => 0.5 ),
+                              70E => 1,
+                              73ACFSTV => 0.5,
+                              MAX ( 74P => 1, 74E => 0.5 ),
+                              76V => 1.5,
+                              82FL => 0.5,
+                              84ACV => 1.5,
+                              85V => 0.5,
+                              88S => -0.25,
+                              MAX ( 89V => 1, 89T => 0.5, 89I => 0.25 ) )
+	   </CONDITION>
+            <ACTIONS>
+                 <SCORERANGE>(-INF TO 1.99 => 2, 2 TO 3.49 => 3, 3.5 TO INF => 6)</SCORERANGE>
+            </ACTIONS> 
+	</RULE>
+	</DRUG>	<!-- END DRV/c -->
+
+	<!-- ********** Begin EI drugs ********** -->
 
     <DRUG>
         <NAME>T20</NAME>
