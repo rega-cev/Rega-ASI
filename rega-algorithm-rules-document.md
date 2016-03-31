@@ -12,6 +12,8 @@ mutations of (41L,67N,69ADGN,70R,210W,215ACDEGHILNSVFY,219EHNQR)\] *or*
 
 ## Tenofovir
 
+Rules are for both TDF and TAF. (from Kristel conversation 21 July 2015 01:30 PM: "*DRV/c should be interpreted in a similar way as DRV/r, and TAF as TDF, until evidence to the contrary.*")
+
 High level resistance:
 
 69X-XX *or* (65NR and not 184IV) or (41L+210W+215Y and no 184I/V) *or*
