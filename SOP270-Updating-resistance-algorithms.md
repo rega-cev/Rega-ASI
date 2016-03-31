@@ -92,20 +92,20 @@ Note: Clinical virologists and/or clinicians determine what changes to the rules
   1. Make the same change in both files so that they correspond at all times.
   1. Some changes are required in one of the files only, eg. author affiliations occur in the narrative file only.
   2. Check the quality of the edits
-1.  Commit the changes (both files, one commit). Reference the associated issue in the commit.
 1.  Test the algorithm using the Stanford tool (see below), regadb dev version and other, as required
-1.  If any problems are found, fix, retest and commit (or amend previous commit).
-1.  Once the algorithm appears to be working correctly, update the issue status to “fixed” on Github
-1.  Finalise (see below)
+1.  If any problems are found, fix and retest
+1.  Once the algorithm appears to be working correctly,
+  1.  Commit the changes on a separate branch (both files, one commit). Reference the associated issue in the commit.
+  1.  Close issue on Github, also add a commment.
+1.  Once all the changes have been made and all the issues addressed, Finalise the algorithm (see below)
 
 ### Testing
 #### Stanford tool
 1. Navigate to http://sierra2.stanford.edu/sierra/servlet/JSierra?action=algSequenceInput
-1. Also navigate to http://hivdb.stanford.edu/pages/geno-rx-datasets.html
-1. Download the appropriate dataset depending on the the drug class the drug that was changed, falls into
+1. If data is needed, also navigate to http://hivdb.stanford.edu/pages/geno-rx-datasets.html and download the appropriate dataset depending on the the drug class the drug that was changed, falls into.
 1. On the sierra tool, upload the test algorithm
-1. Paste a few of the samples taken from the dataset
-1. Analyze
+1. Paste a few sequencesthat cover the appropriate region.
+1. Click Analyze
   1. If the analysis proceeds correctly, the XML works.
 1. Checking the results can also be used to verify that the XML is interpreted correctly but this would require picking the sequences deliberately and knowing the expected results.
 
@@ -115,7 +115,7 @@ Note: Clinical virologists and/or clinicians determine what changes to the rules
 
 Run the fasta file against the current XML, then make the changes and run it again using the new XML. Diff the results.
 
-#### RegaDB dev version (manual add and exports)
+#### RegaDB dev version (manual add exports)
 
 1.  Implement the algorithm in a development or test version of RegaDB and check that it works
   1.  Upload the algorithm manually through the interface of a development or test version of RegaDB with a large dataset
@@ -151,10 +151,14 @@ Run the fasta file against the current XML, then make the changes and run it aga
 1. The algorithm needs to be added to the central repository by Ewout
 1. On the dev system, delete any results associated with the new algorithm added during previous testing
   1. Login to Postgres: psql -U regadb_user regadb_password
-  1. Find the index for the algorithm: SELECT * FROM regadbschema.test;
-  1. Delete all analysis results for this algorithm: DELETE FROM regadbschema.test_result WHERE test_ii = <<index found before>>
+  1. Find the index for the algorithm:
+  >SELECT * FROM regadbschema.test;
+
+  1. Delete all analysis results for this algorithm:
+  > DELETE FROM regadbschema.test_result WHERE test_ii = <<index found before>>
+
   1. Remove the algorithm itself
-  1. Administrator >> Test Settings >> Tests >> <<name of the algorithm>>
+  1. Administrator >> Test Settings >> Tests >> "algorihtm_X"
   1. Delete and confirm
   1. Update from central repository
     1. On simulation, scroll down to Tests and check that the new algorithm displays as a new test. It should also have an associated new analysis entry ($WTS_URL)
@@ -227,9 +231,11 @@ http://sierra2.stanford.edu/sierra/servlet/JSierra?action=algSequenceInput
 1.  Run the RegaDB exports test again
 1.  Update the resistance report template, test it and deploy it (other SOP)
 1.  Perform the batch analysis
-<br><br>
-NOTE: Let users know how long it will take and they shouldn't add any sequences. It takes approximately 1.1 seconds per viral isolate.
-<br><br>
+<br>
+
+
+*NOTE: Let users know how long it will take and they shouldn't add any sequences. It takes approximately 1.1 seconds per viral isolate.*
+<br>
   1.  Administrator >> batch test >> Add
   1.  In the dropdown, select the newly added algorithm
   1.  Ok
