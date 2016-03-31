@@ -79,7 +79,7 @@ History:
 
         <DRUGCLASS>
             <NAME>NRTI</NAME>
-            <DRUGLIST>AZT,DDI,D4T,3TC,ABC,FTC,TDF</DRUGLIST>
+            <DRUGLIST>AZT,DDI,D4T,3TC,ABC,FTC,TDF,TAF</DRUGLIST>
         </DRUGCLASS>
 
         <DRUGCLASS>
@@ -470,6 +470,74 @@ History:
             </ACTIONS>
         </RULE>
     </DRUG><!-- END TDF -->
+
+    <DRUG>
+        <NAME>TAF</NAME>
+        <RULE>
+            <CONDITION>
+                69i
+	    </CONDITION>
+            <ACTIONS>
+                <LEVEL>6</LEVEL>
+            </ACTIONS>
+        </RULE>
+	<RULE>
+            <CONDITION>
+                (65NR AND EXCLUDE 184IV)
+	    </CONDITION>
+            <ACTIONS>
+                <LEVEL>6</LEVEL>
+            </ACTIONS>
+        </RULE>
+		<RULE>
+		<CONDITION>
+			SELECT ATLEAST 5 FROM (41L,67N,70R,210W,215ACDEGHILNSVYF,219EHNQR)
+		</CONDITION>
+		<ACTIONS>
+			<LEVEL>6</LEVEL>
+		</ACTIONS>
+		</RULE>
+        <RULE>
+	    <CONDITION>
+		70EG
+            </CONDITION>
+            <ACTIONS>
+                <LEVEL>4</LEVEL>
+            </ACTIONS>
+	</RULE>
+	<RULE>
+	    <CONDITION>
+		(65NR AND 184IV)
+            </CONDITION>
+            <ACTIONS>
+                <LEVEL>4</LEVEL>
+            </ACTIONS>
+	</RULE>
+	<RULE>
+	    <CONDITION>
+	        SELECT ATLEAST 3 FROM (41L,210W,215Y)
+		</CONDITION>
+            <ACTIONS>
+                <LEVEL>4</LEVEL>
+            </ACTIONS>
+        </RULE>
+	<RULE>
+	    <CONDITION>
+	        SELECT ATLEAST 4 FROM (41L,67N,70R,210W,215ACDEGHILNSVFY,219ENQHR)
+		</CONDITION>
+            <ACTIONS>
+                <LEVEL>4</LEVEL>
+            </ACTIONS>
+        </RULE>
+	<RULE>
+            <CONDITION> 
+	         (SELECT ATLEAST 3 FROM (75I,77L,116Y) AND 151M)
+            </CONDITION>
+            <ACTIONS>
+                 <LEVEL>4</LEVEL>
+            </ACTIONS>
+        </RULE>
+    </DRUG><!-- END TAF -->
 
 	<!-- ********** Begin NNRTI drugs ********** -->
 
