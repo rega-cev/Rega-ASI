@@ -75,6 +75,10 @@ Score -0,25: L76V
 
 ***Comment: gag mutations added***
 
+## Atazanavir/c
+
+Same as ATV/r, from Kristel conversation 21 July 2015 01:30 PM: "*DRV/c should be interpreted in a similar way as DRV/r, and TAF as TDF, until evidence to the contrary.*"
+
 
 ## Lopinavir/r
 
