@@ -1070,25 +1070,28 @@ History:
         <NAME>RAL</NAME>
         <RULE>
             <CONDITION>
-		SCORE FROM (
-			74M => 1,
-			92Q => 1,
-			97A => 0.25,
-			MAX(138A => 1.0, 138K => 0.25),
-			140AS => 1,
-			MAX(143CH => 1.0, 143R => 20.0),
-			148HKR => 20,
-			151I => 0.25,
-			155HS => 20,
-			156N => 0.25,
-			MAX(163K => 1.0, 163R => 0.25),
-			206S => 0.25,
-			230N => 0.25,
-			232N => 1)
-	   </CONDITION>
-            <ACTIONS>
-                 <SCORERANGE>(-INF TO 0.99 => 1, 1 TO 19.99 => 5, 20 TO INF => 6)</SCORERANGE>
-            </ACTIONS> 
+				SCORE FROM (
+					66K => 1,
+					74M => 0.5,
+					92QV => 1,
+					97A => 0.5,
+					118R => 1,
+					119R => 0.25,
+					121Y => 1,
+					MAX(138A => 0.5, 138K => 0.25),
+					140ACS => 1,
+					143CHKRS => 2,
+					148HKR => 2,
+					MAX(151L => 1, 151I => 0.25),
+					155HST => 2,
+					157Q => 0.25,
+					MAX(163K => 0.5, 163R => 0.25),
+					230NR => 0.25,
+					263K => 0.25)
+			</CONDITION>
+			<ACTIONS>
+				 <SCORERANGE>(-INF TO 0.99 => 1, 1 TO 1.99 => 5, 2 TO INF => 6)</SCORERANGE>
+			</ACTIONS> 
         </RULE>
     </DRUG>    <!-- END RAL -->
 
