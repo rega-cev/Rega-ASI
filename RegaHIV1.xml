@@ -204,7 +204,7 @@ History:
         <NAME>D4T</NAME>
         <RULE>
             <CONDITION>
-                 SELECT ATLEAST 1 FROM (67d,69i,75AMST,151M)
+                 SELECT ATLEAST 1 FROM (65R,67d,69i,75AMST,151M)
             </CONDITION>
             <ACTIONS>
                  <LEVEL>6</LEVEL>
