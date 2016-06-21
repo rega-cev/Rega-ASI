@@ -881,7 +881,12 @@ History:
                               MAX ( 82FS => 1, 82ALMT => 0.5 ),
                               MAX ( 84A => 1, 84V => 0.5 ),
                               88D => 0.5,
-                              90M => 0.5 )
+                              90M => 0.5, 
+							  gag.437V => 1.0, 
+							  gag.449F => 1.0,
+							  gag.431V => 0.5, 
+							  gag.436E => 0.5, 
+							  gag.437T => 0.5 )
 	   </CONDITION>
             <ACTIONS>
                  <SCORERANGE>(-INF TO 1.99 => 2, 2 TO 3.49 => 3, 3.5 TO INF => 6)</SCORERANGE>
