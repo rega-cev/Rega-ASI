@@ -2,43 +2,45 @@
 
 ## Purpose
 
-To provide a standard process for managing and deploying Rega resistance interpretation algorithm changes
+To provide a standard process for managing the implementation and deployment of Rega resistance interpretation algorithm changes.
 
 ## Scope
 
 Applies to:
 
-+  Updating the Rega algorithm narrative (DOC and PDF) and associated ASI-XML files
++  Updating the Rega algorithm narrative (DOC and PDF) and ASI-XML files
 +  Documenting changes made and controlling versions in a systematic manner
-+  Testing / validating the new algorithm for clinical and technical correctness
-+  Deploying the algorithm to all instances of RegaDB
-+  Distributing the algorithm to other interpretation services eg, GRADE and HIVDB
-+  Publishing the new algorithm on the Rega website
++  Testing the algorithm changes
++  Deploying the algorithm to the central repository used by all RegaDB instances
++  Deploying the algorithm to the Rega online resistance interpretation website
++  Distributing the algorithm to other interpretation services that use it eg, GRADE and HIVDB
++  Publishing the new algorithm on the KUlLeuven - Rega Institute website
 
 Does not apply to:
 
 +  Creating the rules for the Rega algorithm
-+  Updating the resistance report templates in the UZL instance of RegaDB to display the interpretation made using the new rules
-+  Finding and deploying new algorithms from other sources notably, ANRS and HIVDB
++  Updating the resistance report templates in the UZL or any other instance of RegaDB to display the interpretation made using the new rules
++  Finding and deploying new algorithms from other sources such as ANRS and HIVDB
++  Validating the clinical correctness / applicability of the algorithm rules
 
 ## Related SOPs
 
 +  Updating the report templates (SOP not yet written)
-+  Adding new algorithms from other sources
++  Adding new algorithms from other sources (don't know if it exists)
 
 ## Policy
 
-+  The algorithm documentation, this SOP, the narrative and XML files are stored and managed using Github, using the Rega-ASI repository.
++  The algorithm documentation, this SOP, the narrative rules and the XML files are stored and managed using Github, in the Rega-ASI repository.
 <br><br>
 https://github.com/rega-cev/Rega-ASI
 <br><br>
-+  Rule changes required by the academic / clinical staff must be included in the documentation. This includes the rule changes required, the rationale for those changes and any literature references that may apply.
-+  Each change or group of related changes in the rules document must be captured as a change request ("issue") in Github. Team members decide how fine-grained issues must be (eg. all mutations for one drug in one issue, or all mutations for the entire class as one issue, etc.)
-+  New Rega algorithms must be tested / validated before deployment and distribution to verify both technical and scientific/clinical soundness.
++  Rule changes required by the academic / clinical staff must be included in the documentation as requested. This should include the actual rule changes required, the rationale for those changes and any literature references that may apply. This is stored in the repository as rega-algorithm-rules-document.md. Previous text in the rules document can be overwritten with the new changes since versions are controlled using github.
++  Each change or group of related changes in the rules document must be captured as a change request ("issue") in Github. Team members decide how fine-grained issues must be (eg. all mutations for one drug in one issue, or all mutations for the entire class as one issue, etc.). This is decided depending on the type of changes requested (eg. addition of gag rules are seperate issues to the issues logged for PI changes, even if same drug)
++  New Rega algorithms must be tested before deployment and distribution to ensure the XML can be interpreted by at least, the Stanford and RegaDB interpretation tools. 
 +  The Rega algorithm must be sent to HIV-GRADE and Stanford HIVDB when finalised.
-+  The Rega algorithm must be published on the Rega website when completed.
-+  All algorithms must be tested on the live UZL instance to make sure the algorithm doesn't cause a failure in the software because of configuration differences
-+  After deployment the configuration file and resistance report of the UZL instance of RegaDB must be updated to display the new algorithm by default (the resistance report update process is a separate SOP).
++  The Rega algorithm must be updated on the Rega resistance interpretation website when finalised. 
++  The Rega algorithm must be published on the KULeuven - Rega Institute website when completed.
++  All algorithms must be tested on an instance of RegaDB of same configuration as the UZL instance to ensure the production system will not be affected when the algorithm is deployed.
 
 ## Standards
 ### Versioning standard
@@ -55,7 +57,7 @@ https://github.com/rega-cev/Rega-ASI
 
 ### XML Standards
 
-> this section probably needs a bit of work, or can be skipped entirely
+> this section probably needs a bit of work, or can be skipped entirely??
 
 +  The XML file is used by the resistance interpretation software to determine how to increment a resistance score based on the type and quantity of mutations in the input sequence. Some mutations cause higher level resistance than others and are scored higher.
 +  Each mutation or mutation combination is given a weight. The software compares the mutation list in the algorithm XML against the mutation list from the sequence and assigns a total score. The algorithm contains a score range which uses the total score and assigns an order value. The order value varies from 1 to 6 and represents the resistance interpretation, as follows:
@@ -70,55 +72,45 @@ https://github.com/rega-cev/Rega-ASI
 | 6     | R   |0.0  |
 
 +  The score range in the XML corresponds to the “score at least” statement which each drug listing starts with in narrative file.
-+  Mutations listed at the same position in the PDF (ex. 101E and 101P) that have different scores are encoded in the XML as a MAX statement. If the mutations have the same scores then they are simply combined (ex. 106ED > E or D at position 106)
-+  Maraviroc isn’t in the XML because interpretation relies on the geno2pheno tool.
-
-Basic structure of XML using RPV as example:
-
-> insert example XML here
++  Mutations listed at the same position (eg. 101E and 101P) that have different scores are encoded in the XML as a MAX statement. If the mutations have the same scores then they are simply combined (eg. 106ED > E or D at position 106)
++  Maraviroc is not interpreted (can be interpreted using the geno2pheno tool if required).
 
 ## Procedure
+### Managing new changes
+
+1.  From the rule changes document received from the clinical virology team (email, MS Word etc), replace the text in the rega-algorithm-rules-document.md for the particular drug. In case of drugs where no changes were requested, replace the existing text (changes requested in previous versions) in the rega-algorithm-rules-document.md with "no changes required" or similar to indicate that the new version will not involve any changes to that particular drug.
+1.  From rega-algorithm-rules-document.md, rewrite the changes as a series of issues in github.
+	1.  **Title**: "{drug} rule changes", or a more specific message if required
+	2.  **Comment**: Copy and paste all the changes that are to be included in this issue from rega-algorithm-rules-document.md. What is included will depend on how fine-grained the changes made will be between tests (the entire team should decide this). In the majority of cases, all the change required for the particular drug can be added to the issue but in some cases it may be neccesary to split the changes required across two issues (eg. the gag - PI changes mentioned under Policy)
+	3.  **Assign** the issue to the person responsible for implementing the changes to both narrative and XML files.
+1.  Clone or pull the repository locally
+
 ### Changing the algorithm
-
-Note: Clinical virologists and/or clinicians determine what changes to the rules are needed and should be implemented and write this information in the rules document (outside scope of this SOP).
-
-1.  Add the **rules document** as a new version to **Github**. Make the updates to each drug a seperate commit.
-1.  From the rules document, rewrite the changes as a series of **issues** in github.
-	1.  **Title**: "{drug} rule changes", or a more specific message
-	2.  **Comment**: Copy paste the changes that will are to be included for this issue from the rules document. What is included will depend on how fine-grained the issues should be (the team decides this) or what was decided should be included (some things may be left out until later).
-	3.  **Assign** it.
-1.  Clone / **pull** the repository locally
-1.  Address one issue at a time in both the narrative and XML files, writing the changes required into both files.
+1.  Address one issue at a time but in both the narrative and XML files.
   1. Make the same change in both files so that they correspond at all times.
-  1. Some changes are required in one of the files only, eg. author affiliations occur in the narrative file only.
-  2. Check the quality of the edits
-1.  Test the algorithm using the Stanford tool (see below), regadb dev version and other, as required
-1.  If any problems are found, fix and retest
-1.  Once the algorithm appears to be working correctly,
-  1.  Commit the changes on a separate branch (both files, one commit). Reference the associated issue in the commit.
-  1.  Close issue on Github, also add a commment.
-1.  Once all the changes have been made and all the issues addressed, Finalise the algorithm (see below)
+  1. Some changes are required in only one of the files (eg. author affiliations occur in the narrative file only).
+  1. Check the quality of the edits
 
-### Testing
-#### Stanford tool
-1. Navigate to http://sierra2.stanford.edu/sierra/servlet/JSierra?action=algSequenceInput
-1. If data is needed, also navigate to http://hivdb.stanford.edu/pages/geno-rx-datasets.html and download the appropriate dataset depending on the the drug class the drug that was changed, falls into.
-1. On the sierra tool, upload the test algorithm
-1. Paste a few sequencesthat cover the appropriate region.
-1. Click Analyze
-  1. If the analysis proceeds correctly, the XML works.
-1. Checking the results can also be used to verify that the XML is interpreted correctly but this would require picking the sequences deliberately and knowing the expected results.
+### Test the XML
+1.  Test the algorithm using the Stanford tool as a minimum (more tests in the Additional tests section).
+  1.  Navigate to http://sierra2.stanford.edu/sierra/servlet/JSierra?action=algMutationsInput
+  1.  Under the Algorithms section in section B, upload the changed XML.
+  1.  Enter mutations from the XML into the mutation text boxes, or use the combo boxes. Be sure to use the correct drug class.
+1.  If any problems are found, fix and retest. If the XML syntax is incorrect, a blank screen is typically displyed.
+1.  Once the algorithm appears to be working correctly:
+  1.  Commit the changes on a separate branch (both files, one commit) and reference the associated issue in the commit.
+  1.  Close the associated issue on Github and commment appropriately.
 
-#### Kristof /Dutch discordance tool (?)
+### Additional testing (as required / possible)
+#### Other Stanford tools
+#### GRADE tools
+#### Kristof / Dutch discordance tool (?)
 #### Jens testing tool (?)
-#### Sequence tool (?)
-
-Run the fasta file against the current XML, then make the changes and run it again using the new XML. Diff the results.
-
-#### RegaDB dev version (manual add exports)
+#### RegaDB compiler / Sequence tool (?)
+#### RegaDB development version (manual add exports)
 
 1.  Implement the algorithm in a development or test version of RegaDB and check that it works
-  1.  Upload the algorithm manually through the interface of a development or test version of RegaDB with a large dataset
+  1.  Upload the algorithm manually through the interface of a development / test version of RegaDB, preferably with a large dataset
     1. Administrator >> test settings >> test >> Add
       1. test: REGA vx.y.z
       1. test type: Genotypic Susceptibility Score (GSS) (HIV-1)
@@ -139,17 +131,20 @@ Run the fasta file against the current XML, then make the changes and run it aga
       1. click add
   1. Click ok
   1. Restart RegaDB
-  1.  Add a test sample and save it.
+  1.  Add a test sample or edit an existing sample and save it.
   1.  Check that the resistance is interpreted correctly
+  1.  Batch check:
     1.  Export resistance data ("before" dataset)
     1.  Perform a batch analysis
+	    1. Administrator >> batch test >> Add
+		1. In the dropdown, select the new algorithm >> OK
+		1. The progress indicator will show when the batch analysis is done, then click OK
+		1. check a few patients to see if the results are ok.
     1.  Export the resistance data again ("after" dataset)
-    1.  Diff the before and after datasets and check the changes to verify the software uses the algorithm correctly (differences are what was expected)
-
+    1.  Diff the before and after datasets and check the changes to verify the software uses the algorithm correctly
 
 #### RegaDB: Test deployment on test system from the central repository
-1. The algorithm needs to be added to the central repository by Ewout
-1. On the dev system, delete any results associated with the new algorithm added during previous testing
+1. On the test system, delete any results associated with the new algorithm added during previous testing
   1. Login to Postgres: psql -U regadb_user regadb_password
   1. Find the index for the algorithm:
   >SELECT * FROM regadbschema.test;
@@ -160,26 +155,22 @@ Run the fasta file against the current XML, then make the changes and run it aga
   1. Remove the algorithm itself
   1. Administrator >> Test Settings >> Tests >> "algorihtm_X"
   1. Delete and confirm
+1.  Add the algorithm to a test instance of the central repository that the test instance of RegaDB points to.
   1. Update from central repository
     1. On simulation, scroll down to Tests and check that the new algorithm displays as a new test. It should also have an associated new analysis entry ($WTS_URL)
   1. Run the update
-  1. Once update from central is done check one patient to see if it works
-  1. If one patient is good, perform a batch analysis
-    1. Administrator >> batch test >> Add
-    1. In the dropdown, select the new algorithm >> OK
-    1. The progress indicator will show when the batch analysis is done, then click OK
-    1. check a few patients to see if the results are ok.
+  1. Once update from central is done check one patient to see if it works (as explained above)
+  1. If one patient is good, perform a batch analysis and check (as explained above)
 
 ### Finalise
 Once all issues have been addressed and testing is complete, the algorithm can be finalised.
+
 1.  Decide on new version number (see “standards” section)
 1.  Change ALGNAME and ALGVERSION tags in the XML
 1.  Update history comment block in the XML and commit
 1.  Rename the file and commit (git move)
-1.  Merge into master branch
 1.  Make a release branch using the name of the version as the branch name
-1.  Tag the commit as a release
-1.  Checkout master
+1.  Tag the commit as a release also
 1.  Push to github repository, (with tags!), all branches
 
 ### Distribution
@@ -200,7 +191,6 @@ https://rega.kuleuven.be/cev/avd/software/software/rega-algorithm
   1.  Review changes and check the links work correctly
   1.  Download the files and compare (diff) them to ensure the correct files were uploaded
   1.  Edit the links and text on the page https://rega.kuleuven.be/cev/avd/software
-> the rega website can be made to point to the github repository - that means we don't have to update the website also
 
 #### Distribution to partners
 1.  Generate a test dataset from HIVDB
