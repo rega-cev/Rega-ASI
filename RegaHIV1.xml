@@ -921,7 +921,11 @@ History:
                               84V => 1,
                               85V => 0.5,
                               MAX ( 88S => 1.5, 88D => 1 ),
-                              90M => 1 )
+                              90M => 1 
+							  gag.431V => 0.5, 
+							  gag.437V => 0.5, 
+							  gag.449F => 0.5, 
+							  gag.453L => 0.5 )
 	   </CONDITION>
             <ACTIONS>
                  <SCORERANGE>(-INF TO 1.99 => 2, 2 TO 3.49 => 3, 3.5 TO INF => 6)</SCORERANGE>
