@@ -405,138 +405,176 @@ History:
 
     <DRUG>
         <NAME>TDF</NAME>
-        <RULE>
-            <CONDITION>
-                69i
-	    </CONDITION>
-            <ACTIONS>
-                <LEVEL>6</LEVEL>
-            </ACTIONS>
-        </RULE>
-	<RULE>
-            <CONDITION>
-                (65NR AND EXCLUDE 184IV)
-	    </CONDITION>
-            <ACTIONS>
-                <LEVEL>6</LEVEL>
-            </ACTIONS>
-        </RULE>
-		<RULE>
-		<CONDITION>
-			SELECT ATLEAST 5 FROM (41L,67N,70R,210W,215ACDEGHILNSVYF,219EHNQR)
-		</CONDITION>
-		<ACTIONS>
-			<LEVEL>6</LEVEL>
-		</ACTIONS>
-		</RULE>
-        <RULE>
-	    <CONDITION>
-		70EG
-            </CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-	</RULE>
-	<RULE>
-	    <CONDITION>
-		(65NR AND 184IV)
-            </CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-	</RULE>
-	<RULE>
-	    <CONDITION>
-	        SELECT ATLEAST 3 FROM (41L,210W,215Y)
-		</CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-        </RULE>
-	<RULE>
-	    <CONDITION>
-	        SELECT ATLEAST 4 FROM (41L,67N,70R,210W,215ACDEGHILNSVFY,219ENQHR)
-		</CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-        </RULE>
-	<RULE>
-            <CONDITION> 
-	         (SELECT ATLEAST 3 FROM (75I,77L,116Y) AND 151M)
-            </CONDITION>
-            <ACTIONS>
-                 <LEVEL>4</LEVEL>
-            </ACTIONS>
-        </RULE>
-    </DRUG><!-- END TDF -->
+			<RULE>
+				<CONDITION>
+					69i
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+			
+			<RULE>
+				<CONDITION>
+					65NR AND EXCLUDE 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+		
+			<RULE>
+				<CONDITION>
+					41L AND 210W AND 215Y AND 
+					EXCLUDE 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+		
+			<RULE>
+				<CONDITION>
+					SELECT ATLEAST 3 FROM (67N,70R,215ACDEGHILNSVYF,219EHNQR) AND 
+					SELECT ATLEAST 1 FROM (41L,210W)
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+        
+			<RULE>
+				<CONDITION>
+					70EG
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+		
+			<RULE>
+				<CONDITION>
+				65NR AND 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+	
+			<RULE>
+				<CONDITION>
+					41L AND 210W AND 215Y AND 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+			
+			<RULE>
+				<CONDITION>
+					SELECT ATLEAST 2 FROM (67N,70R,215ACDEGHILNSVFY,219ENQHR) AND
+					SELECT ATLEAST 1 FROM (41L,210W)
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+	
+			<RULE>
+				<CONDITION> 
+					151M AND 75I AND 77L AND 116Y
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+	</DRUG><!-- END TDF -->
 
     <DRUG>
         <NAME>TAF</NAME>
-        <RULE>
-            <CONDITION>
-                69i
-	    </CONDITION>
-            <ACTIONS>
-                <LEVEL>6</LEVEL>
-            </ACTIONS>
-        </RULE>
-	<RULE>
-            <CONDITION>
-                (65NR AND EXCLUDE 184IV)
-	    </CONDITION>
-            <ACTIONS>
-                <LEVEL>6</LEVEL>
-            </ACTIONS>
-        </RULE>
-		<RULE>
-		<CONDITION>
-			SELECT ATLEAST 5 FROM (41L,67N,70R,210W,215ACDEGHILNSVYF,219EHNQR)
-		</CONDITION>
-		<ACTIONS>
-			<LEVEL>6</LEVEL>
-		</ACTIONS>
-		</RULE>
-        <RULE>
-	    <CONDITION>
-		70EG
-            </CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-	</RULE>
-	<RULE>
-	    <CONDITION>
-		(65NR AND 184IV)
-            </CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-	</RULE>
-	<RULE>
-	    <CONDITION>
-	        SELECT ATLEAST 3 FROM (41L,210W,215Y)
-		</CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-        </RULE>
-	<RULE>
-	    <CONDITION>
-	        SELECT ATLEAST 4 FROM (41L,67N,70R,210W,215ACDEGHILNSVFY,219ENQHR)
-		</CONDITION>
-            <ACTIONS>
-                <LEVEL>4</LEVEL>
-            </ACTIONS>
-        </RULE>
-	<RULE>
-            <CONDITION> 
-	         (SELECT ATLEAST 3 FROM (75I,77L,116Y) AND 151M)
-            </CONDITION>
-            <ACTIONS>
-                 <LEVEL>4</LEVEL>
-            </ACTIONS>
-        </RULE>
+			<RULE>
+				<CONDITION>
+					69i
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+			
+			<RULE>
+				<CONDITION>
+					65NR AND EXCLUDE 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+		
+			<RULE>
+				<CONDITION>
+					41L AND 210W AND 215Y AND 
+					EXCLUDE 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+		
+			<RULE>
+				<CONDITION>
+					SELECT ATLEAST 3 FROM (67N,70R,215ACDEGHILNSVYF,219EHNQR) AND 
+					SELECT ATLEAST 1 FROM (41L,210W)
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>6</LEVEL>
+				</ACTIONS>
+			</RULE>
+        
+			<RULE>
+				<CONDITION>
+					70EG
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+		
+			<RULE>
+				<CONDITION>
+				65NR AND 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+	
+			<RULE>
+				<CONDITION>
+					41L AND 210W AND 215Y AND 184IV
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+			
+			<RULE>
+				<CONDITION>
+					SELECT ATLEAST 2 FROM (67N,70R,215ACDEGHILNSVFY,219ENQHR) AND
+					SELECT ATLEAST 1 FROM (41L,210W)
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
+	
+			<RULE>
+				<CONDITION> 
+					151M AND 75I AND 77L AND 116Y
+				</CONDITION>
+				<ACTIONS>
+					<LEVEL>4</LEVEL>
+				</ACTIONS>
+			</RULE>
     </DRUG><!-- END TAF -->
 
 	<!-- ********** Begin NNRTI drugs ********** -->
