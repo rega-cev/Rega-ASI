@@ -958,7 +958,12 @@ History:
 					  83D => 1.5,
 					  84ACV => 1,
 					  89TV => 0.25,
-					  90M => 0.25 )
+					  90M => 0.25,
+					  gag.128I => 0.5, 
+					  gag.431V => 0.5, 
+					  gag.449F => 0.5, 
+					  gag.452S => 0.5, 
+					  gag.453L => 0.5 )
 	   </CONDITION>
             <ACTIONS>
                  <SCORERANGE>(-INF TO 1.99 => 2, 2 TO 3.49 => 3, 3.5 TO INF => 6)</SCORERANGE>
