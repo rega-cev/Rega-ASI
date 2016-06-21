@@ -86,6 +86,7 @@ https://github.com/rega-cev/Rega-ASI
 1.  Clone or pull the repository locally
 
 ### Changing the algorithm
+1.  Changes are added on a new branch.
 1.  Address one issue at a time but in both the narrative and XML files.
   1. Make the same change in both files so that they correspond at all times.
   1. Some changes are required in only one of the files (eg. author affiliations occur in the narrative file only).
@@ -96,9 +97,9 @@ https://github.com/rega-cev/Rega-ASI
   1.  Navigate to http://sierra2.stanford.edu/sierra/servlet/JSierra?action=algMutationsInput
   1.  Under the Algorithms section in section B, upload the changed XML.
   1.  Enter mutations from the XML into the mutation text boxes, or use the combo boxes. Be sure to use the correct drug class.
-1.  If any problems are found, fix and retest. If the XML syntax is incorrect, a blank screen is typically displyed.
+1.  If any problems are found, fix and retest. If the XML syntax is incorrect, a blank screen is typically displayed.
 1.  Once the algorithm appears to be working correctly:
-  1.  Commit the changes on a separate branch (both files, one commit) and reference the associated issue in the commit.
+  1.  Commit the changes (both files, one commit) and reference the associated issue in the commit.
   1.  Close the associated issue on Github and commment appropriately.
 
 ### Additional testing (as required / possible)
