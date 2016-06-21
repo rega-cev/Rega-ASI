@@ -98,9 +98,12 @@ https://github.com/rega-cev/Rega-ASI
   1.  Under the Algorithms section in section B, upload the changed XML.
   1.  Enter mutations from the XML into the mutation text boxes, or use the combo boxes. Be sure to use the correct drug class.
 1.  If any problems are found, fix and retest. If the XML syntax is incorrect, a blank screen is typically displayed.
+
+### Commit and push
 1.  Once the algorithm appears to be working correctly:
   1.  Commit the changes (both files, one commit) and reference the associated issue in the commit.
-  1.  Close the associated issue on Github and commment appropriately.
+  2.  Push changes
+  1.  Refresh issue page and close the associated issue on Github and commment appropriately.
 
 ### Additional testing (as required / possible)
 #### Other Stanford tools
