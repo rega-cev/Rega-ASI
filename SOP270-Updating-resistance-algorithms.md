@@ -93,7 +93,7 @@ https://github.com/rega-cev/Rega-ASI
   1. Check the quality of the edits
 
 ### Notes about drug abbreviations
-+  Choose drug abbreviations that are the same as Stanford. If this is not possible because in regaDB we want a specific abbreviation that may be different from Stanford, then in the algorithm use the Stanford abbreviation and let Ewout change the regaDB code to map from the Stanford abbreviation used in the rega algorithm to the abbreviation used in regaDB. DRV/c and TAF were handled this way in v10: the algorithm was made with DRV/r and TDF only but in regaDB we also have TAF and DRV/c as seperate drugs so the mapping was made so that the interpretation of TAF is done according to the TDF rules. 
++  Choose drug abbreviations that are the same as Stanford. If this is not possible because in regaDB we want a specific abbreviation that may be different from what Stanford wants, then in the algorithm use the Stanford abbreviation and let Ewout change the regaDB code to map from the Stanford abbreviation used in the rega algorithm to the abbreviation used in regaDB.  
 
 ### Test the XML
 1.  Test the algorithm using the Stanford tool as a minimum (more tests in the Additional tests section).
