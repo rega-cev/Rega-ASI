@@ -113,7 +113,11 @@ https://github.com/rega-cev/Rega-ASI
 #### GRADE tools
 #### Kristof / Dutch discordance tool (?)
 #### Jens testing tool (?)
-#### RegaDB compiler / Sequence tool (?)
+#### RegaDB compiler / Sequence tool
+1.  Move the new algorithm xml and a fasta file to crunchie
+1.  Run ./asiprocess myAlgorithm.xml mySequence.fasta
+1.  Check the output
+
 #### RegaDB development version (manual add exports)
 
 1.  Implement the algorithm in a development or test version of RegaDB and check that it works
