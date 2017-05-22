@@ -5,6 +5,7 @@
 <!-- Rega algorithm in XML format -->
 <!-- 
 History:
+22-MAY-2017 added DRV/c, TAF rules. change made for ANRS dose associated rules. D4T, EVG, TDF, RTG, DTG, TPV/r, ATV/r, LPV/r, DRV/r rules change
 08-SEP-O4 TFL updated
 13-JAN-04 TFL updated
 13-NOV-03 TFL updated
@@ -12,8 +13,8 @@ History:
 -->
 
 <ALGORITHM>
-    <ALGNAME>Rega v9.1.0</ALGNAME>
-    <ALGVERSION>9.1.0</ALGVERSION>
+    <ALGNAME>Rega v10.0.0</ALGNAME>
+    <ALGVERSION>10.0.0</ALGVERSION>
 
     <DEFINITIONS>
     	<GENE_DEFINITION>
