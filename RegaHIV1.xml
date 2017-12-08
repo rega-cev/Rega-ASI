@@ -1099,7 +1099,7 @@ History:
 					155HST => 0.5,
 					230GR => 0.25,
 					263K => 1,
-					(49G AND 230R AND 263K) => 2)
+					(49G AND 230R AND 263K) => 0.5)
 			</CONDITION> 
 		<ACTIONS> 
 			<SCORERANGE>(-INF TO 1.49 => 1, 1.5 TO 1.99 => 4, 2 TO INF => 6)</SCORERANGE>
