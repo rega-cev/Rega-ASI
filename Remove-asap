@@ -1,0 +1,66 @@
+https://github.com/rega-cev/Rega-ASI
+
+implement into the SOP file 
+
+
+Some of explanation below is also in the SOP
+##################################################
+
+documentation : 
+	Rega_HIV1_Rules.doc  (OLD version, not part of documentation, base for branches document, so do not delete); for newer versions see branches for version 
+	-SOP270-Updating-resistance-algorithms.md
+	- rega-algorithm-rules-document.md
+	
+	
+way set up: all documentation maintained on master branch but
+	release and code of xml is other branches (version-specific). 
+	so in a branch, you do not see master documentation 
+	
+	
+update on documentation; do it on the master 
+
+
+
+Master: xml ; old not the most current one. (should be removed) 
+
+
+
+
+# SOP270-Updating-resistance-algorithms.md
+changes ; generic for any version 
+
+
+# rega-algorithm-rules-document.md (unique)
+information taken from word file from clinician (rule creator) 
+version specific 
+
+
+Remove from master
+-	Rega_HIV1_Rules.doc
+-   
+
+## define change w.r.t. old version
+## each difference from version x to version y  -> create issue (copy paste subset  from rega-algorithm-rules-document.md) 
+## go latest branch, 
+	implement change in the doc file (pdf) and in  the xml file in the new version branch 
+	test and quality check 
+	close the issue (reference issue # in the commit); handy directional relationship
+	
+	
+## release of new version = new branch 
+bugs of this release should be in this branch 
+
+
+
+## strategy: branch new version never disappears or is renamed. When a new version is mature, branch it off and give it the specifkc # version name. 
+And tag as new release. but branch 'new version' is just a cumulative repo of all changes , across all changes. 
+
+
+
+## VERSION 11  is still 'new version' 
+some changes of 11 already in 'new version' 
+but incomplete. 
+
+which are still to do? check the # of issues outstanding 
+
+	
